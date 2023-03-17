@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <meta name="title" content="Мое портфолио">
+    <meta name="description" content="Здесь вы сможете ознакомиться с моими работами и узнать больше обо мне">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+</head>
+<body>
+
+    <form class="form">
+            <div class="row">
+                <p><strong>Компания или ИП</strong></p>
+                <input 
+                    id="search" 
+                    name="search"           
+                    type="text" 
+                    autocomplete="off"
+                    autofocus="true"
+                    placeholder="Введите название, ИНН, ОГРН или адрес организации"
+                />
+            </div>
+            <auto-complete id="name_list" class="name_list"></auto-complete>     <!--Веб-компонент автокомплита -->
+            <p id="type"></p>
+             <div class="row">
+              <label>Краткое наименование</label>
+              <input id="name_short">
+            </div>
+            <div class="row">
+              <label>Полное наименование</label>
+              <input id="name_full">
+            </div>
+            <div class="row">
+              <label>ИНН / КПП</label>
+              <input id="inn_kpp">
+            </div>
+            <div class="row">
+              <label>Адрес</label>
+                <input id="address">
+            </div>
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

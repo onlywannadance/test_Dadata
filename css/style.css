@@ -1,0 +1,85 @@
+body {
+    padding: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  input {
+    font-size: 16px;
+    padding: 4px;
+  }
+
+  .result {
+    width: 50%;
+    min-width: 300px;
+  }
+  
+  .row {
+    margin-top: 1em;
+  }
+  
+  .row label {
+    display: block;
+    min-width: 10em;
+  }
+  
+  .row input, .row textarea {
+    width: 100%;
+  }
+
+  .search-wrap {
+    position: relative;
+    width: 300px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .search-wrap.active .search-list {
+    display: block;
+    border-radius: 0 0 3px 3px;
+  } 
+
+  .companiesNameList {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .companiesNameList_item:hover, .companiesNameList_item.focused {
+    background-color: #eee;
+  }
+
+  .companiesNameList_item {
+    display: block;
+    margin-top: 4px;
+    cursor: pointer;
+    transition: all .3s ease;
+    background-color: white;
+    border-color:black;
+    border-radius: 0 0 3px 3px;
+  }
+
+  .companiesNameList_item_inn {
+    display: inline-flex;
+    color:#7e7e7e;
+    font-size: 12px;
+  }
+
+  .companiesNameList_item_address {
+    display: inline-flex;
+    margin-left: 20px;
+    color:#7e7e7e;
+    font-size: 12px;
+  }
+
+  @media (max-width: 575px) {
+    .companiesNameList_item_address {
+        margin-left: 0px;
+      }
+  }
+
+
+
+
+
+
