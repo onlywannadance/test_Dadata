@@ -88,19 +88,39 @@ class Autocomplete extends HTMLElement {
 
                 nameList.onclick = (e) => {
                     const target = e.target; 
-                    if(target.className === 'name_list') return;   
-                    search.value = e.target.parentNode.childNodes[1].innerHTML;
-                    search.focus();
 
-                    companies.map((prop) => {
-                        if(prop.value !== e.target.parentNode.childNodes[1].innerHTML) return;
-    
-                        type.innerText = `${typeDescription(prop.data.type)} (${prop.data.type})`;
-                        shortName.value = prop.data.name.short ? prop.data.name.short : prop.value;
-                        fullName.value = prop.data.name.full_with_opf;
-                        innKpp.value = `${prop.data.inn} / ${prop.data.kpp ? prop.data.kpp : '-'}`;
-                        address.value = prop.data.address.value;
-                    })
+                    console.log(e);
+
+                    if(target.className === 'name_list') return; 
+
+                    if(target.className === 'companiesNameList_item') {
+                        search.value = e.target.childNodes[1].innerHTML;
+                        search.focus();
+
+                        companies.map((prop) => {
+                            if(prop.value === e.target.parentNode.childNodes[1].innerHTML || prop.value === e.target.childNodes[1].innerHTML) {
+                                type.innerText = `${typeDescription(prop.data.type)} (${prop.data.type})`;
+                                shortName.value = prop.data.name.short ? prop.data.name.short : prop.value;
+                                fullName.value = prop.data.name.full_with_opf;
+                                innKpp.value = `${prop.data.inn} / ${prop.data.kpp ? prop.data.kpp : '-'}`;
+                                address.value = prop.data.address.value;
+                            }
+                        })
+                    }
+                    else {
+                        search.value = e.target.parentNode.childNodes[1].innerHTML;
+                        search.focus();
+
+                        companies.map((prop) => {
+                            if(prop.value === e.target.parentNode.childNodes[1].innerHTML) {
+                                type.innerText = `${typeDescription(prop.data.type)} (${prop.data.type})`;
+                                shortName.value = prop.data.name.short ? prop.data.name.short : prop.value;
+                                fullName.value = prop.data.name.full_with_opf;
+                                innKpp.value = `${prop.data.inn} / ${prop.data.kpp ? prop.data.kpp : '-'}`;
+                                address.value = prop.data.address.value;
+                            }
+                        })
+                    }
                 }
             }
         }
